@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="722.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetjava.StudentinterfaceController">
+   <children>
+      <AnchorPane prefHeight="722.0" prefWidth="156.0" style="-fx-background-color: #00C0EF;">
+         <children>
+            <Label fx:id="mailfield" layoutX="4.0" layoutY="175.0" prefHeight="17.0" prefWidth="170.0" />
+            <ImageView fitHeight="136.0" fitWidth="273.0" layoutX="21.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logo.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="exit" layoutX="42.0" layoutY="230.0" onAction="#handleexit" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #DD4B39;" text="LOG OUT" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="profilstudent" layoutX="27.0" layoutY="120.0" onAction="#handleprofil" prefHeight="30.0" prefWidth="124.0" style="-fx-background-color: #F39C12;" text="YOUR PROFIL" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

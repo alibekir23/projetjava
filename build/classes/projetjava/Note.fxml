@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetjava.NoteController">
+   <children>
+      <VBox layoutY="107.0" prefHeight="477.0" prefWidth="178.0" styleClass="leftbox">
+         <children>
+            <JFXButton onAction="#retour" prefHeight="70.0" prefWidth="200.0" text="Home">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton onAction="#retour" prefHeight="70.0" prefWidth="212.0" text="Return">
+               <graphic>
+                  <ImageView fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Separator layoutX="11.0" layoutY="243.0" prefHeight="11.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </Separator>
+            <JFXButton onAction="#Stat" prefHeight="69.0" prefWidth="173.0" style="-fx-background-color: #00C0EF;" text="Statistiques" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/031-graph-512.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Separator prefHeight="11.0" prefWidth="149.0">
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </Separator>
+            <JFXButton onAction="#NewNote" prefHeight="69.0" prefWidth="173.0" style="-fx-background-color: #00C0EF;" text="New Note" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/ajouter.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton onAction="#Modifier" prefHeight="70.0" prefWidth="212.0" style="-fx-background-color: #00C0EF;" text="Update Note" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/modifier.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton onAction="#supprimer" prefHeight="70.0" prefWidth="212.0" style="-fx-background-color: red;" text="Delete Note" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/supprimer.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </JFXButton>
+         </children>
+      </VBox>
+      <HBox layoutY="-2.0" prefHeight="105.0" prefWidth="974.0" style="-fx-background-color: #00C0EF;" styleClass="upperbox">
+         <children>
+            <ImageView fitHeight="105.0" fitWidth="127.0">
+               <image>
+                  <Image url="@../img/elite.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="64.0" prefWidth="729.0" text="Notes" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <JFXButton fx:id="pdf1" buttonType="RAISED" layoutX="836.0" layoutY="237.0" onAction="#convertirPDF" prefHeight="39.0" prefWidth="117.0" style="-fx-background-color: #00C0EF;" text="Save" textFill="WHITE" />
+      <ImageView fitHeight="37.0" fitWidth="36.0" layoutX="839.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/1200px-PDF_file_icon.svg.png" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="836.0" layoutY="327.0" onAction="#pdf" prefHeight="39.0" prefWidth="117.0" style="-fx-background-color: #00C0EF;" text="Print" textFill="WHITE" />
+      <ImageView fitHeight="39.0" fitWidth="36.0" layoutX="836.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Paul-24-512.png" />
+         </image>
+      </ImageView>
+      <GridPane fx:id="g" layoutX="249.0" layoutY="108.0" prefHeight="477.0" prefWidth="537.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="103.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="345.0" minHeight="10.0" prefHeight="284.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="273.0" minHeight="4.0" prefHeight="96.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane prefWidth="412.0" GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <JFXComboBox fx:id="students" onAction="#load" prefHeight="30.0" prefWidth="106.0" promptText="Student" GridPane.columnIndex="1" />
+                  <JFXComboBox fx:id="nom_classe" onAction="#test" prefHeight="32.0" prefWidth="127.0" promptText="Class" />
+               </children>
+            </GridPane>
+            <TableView fx:id="tab2" prefHeight="276.0" prefWidth="537.0" GridPane.rowIndex="2">
+               <columns>
+                  <TableColumn fx:id="id_note" prefWidth="112.0" text="ID Note" />
+                  <TableColumn fx:id="nom_matiere" prefWidth="171.0" text="Module" />
+                  <TableColumn fx:id="coef" prefWidth="111.0" text="Coef" />
+                  <TableColumn fx:id="note" prefWidth="145.0" text="Note" />
+               </columns>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#supprimer" text="delete" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="64.0" prefWidth="233.0" text="Student Report Card">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="150.0" />
+               </GridPane.margin>
+            </Label>
+            <GridPane GridPane.rowIndex="3">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <HBox>
+                     <children>
+                        <Label prefHeight="28.0" prefWidth="95.0" text="Average:" textFill="#bc2828">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="30.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="Average" prefHeight="37.0" prefWidth="61.0">
+                           <HBox.margin>
+                              <Insets left="5.0" top="30.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox GridPane.columnIndex="2">
+                     <children>
+                        <Label prefHeight="28.0" prefWidth="95.0" text="Credit:" textFill="#bc2828">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="30.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="Credit" prefHeight="37.0" prefWidth="61.0">
+                           <HBox.margin>
+                              <Insets left="5.0" top="30.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox GridPane.columnIndex="1">
+                     <children>
+                        <Label prefHeight="28.0" prefWidth="95.0" text="Total:" textFill="#bc2828">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="30.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="Total" prefHeight="37.0" prefWidth="61.0">
+                           <HBox.margin>
+                              <Insets left="5.0" top="30.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+      <JFXButton buttonType="RAISED" layoutX="836.0" layoutY="414.0" onAction="#mail" prefHeight="39.0" prefWidth="117.0" style="-fx-background-color: #00C0EF;" text="Send" textFill="WHITE" />
+      <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="836.0" layoutY="413.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/email-hd-png-hd-painting-512.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

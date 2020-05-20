@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="695.0" prefWidth="800.0" style="-fx-background-color: #00C0EF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetjava.LoginController">
+   <children>
+      <Label layoutX="76.0" layoutY="296.0" />
+      <Label fx:id="lbmail" layoutX="387.0" layoutY="207.0" prefHeight="30.0" prefWidth="316.0" />
+      <Label fx:id="lbpwd" layoutX="387.0" layoutY="320.0" prefHeight="25.0" prefWidth="316.0" />
+      <JFXButton layoutX="536.0" layoutY="546.0" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #00C0EF;" textFill="WHITE">
+         <font>
+            <Font name="Roboto Medium" size="14.0" />
+         </font>
+      </JFXButton>
+      <Pane layoutX="118.0" layoutY="49.0" prefHeight="528.0" prefWidth="570.0" style="-fx-background-color: f2f2f2;">
+         <children>
+            <JFXTextField fx:id="emailtext" layoutX="133.0" layoutY="228.0" prefHeight="36.0" prefWidth="285.0" promptText="e-mail" />
+            <JFXPasswordField fx:id="pwdtext" layoutX="133.0" layoutY="295.0" prefHeight="30.0" prefWidth="285.0" promptText="password" />
+            <Hyperlink fx:id="mdpoublie" layoutX="205.0" layoutY="413.0" onAction="#handlemdpoublie" prefHeight="23.0" prefWidth="140.0" text="forgot your password ?" />
+            <JFXButton fx:id="cnx" layoutX="174.0" layoutY="363.0" onAction="#handlelogin" prefHeight="36.0" prefWidth="203.0" style="-fx-background-color: #00C0EF;" text="LOG IN" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="back" layoutX="218.0" layoutY="459.0" onAction="#handleback" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #DD4B39;" text="RETURN" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="208.0" fitWidth="242.0" layoutX="181.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

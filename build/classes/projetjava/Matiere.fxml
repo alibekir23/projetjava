@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="584.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetjava.MatiereController">
+   <stylesheets>
+      <URL value="@../../css/login.css" />
+      <URL value="@../../css/mainwindow.css" />
+      <URL value="@../../css/menusdef.css" />
+   </stylesheets>
+   <children>
+      <BorderPane prefHeight="584.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="477.0" prefWidth="178.0" styleClass="leftbox" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton onAction="#retour" prefHeight="70.0" prefWidth="200.0" text="Home">
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton onAction="#retour" prefHeight="70.0" prefWidth="212.0" text="Return">
+                     <graphic>
+                        <ImageView fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/back.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Separator layoutX="11.0" layoutY="243.0" prefHeight="11.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin></Separator>
+                  <JFXButton onAction="#NewMatiere" prefHeight="69.0" prefWidth="173.0" style="-fx-background-color: #00C0EF;" text="New Module" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/ajouter.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton onAction="#supprimer" prefHeight="70.0" prefWidth="212.0" style="-fx-background-color: red;" text="Delete Module" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/supprimer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton onAction="#Modifier" prefHeight="70.0" prefWidth="212.0" style="-fx-background-color: #00C0EF;" text="Update Module" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/modifier.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </left>
+         <top>
+            <HBox prefHeight="79.0" prefWidth="1200.0" style="-fx-background-color: #00C0EF;" styleClass="upperbox" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="105.0" fitWidth="127.0">
+                     <image>
+                        <Image url="@../img/elite.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                 
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="64.0" prefWidth="952.0" text="Modules" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <GridPane prefHeight="170.0" prefWidth="698.0" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="226.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="466.0" minHeight="10.0" prefHeight="460.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <GridPane prefHeight="89.0" prefWidth="1019.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="filterField" prefHeight="25.0" prefWidth="348.0" promptText="search" style="-fx-background-color: #E5E7E9;">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin></TextField>
+                     </children>
+                  </GridPane>
+                  <TableView fx:id="tab" onSort="#Modifier" prefHeight="329.0" prefWidth="1022.0" GridPane.rowIndex="1">
+                     <columns>
+                        <TableColumn fx:id="id_matiere" prefWidth="243.0" text="ID Module" />
+                        <TableColumn fx:id="nom_matiere" prefWidth="258.0" text="Module Name" />
+                        <TableColumn fx:id="coef" prefWidth="122.0" text="coifficient" />
+                        <TableColumn fx:id="description" prefWidth="264.0" text="Description" />
+                        <TableColumn fx:id="classe" prefWidth="124.0" text="Class" />
+                     </columns>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <contextMenu>
+                        <ContextMenu>
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#supprimer" text="Delete" />
+                          </items>
+                        </ContextMenu>
+                     </contextMenu>
+                  </TableView>
+               </children>
+            </GridPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
