@@ -48,21 +48,11 @@ public class MainwindowController implements Initializable {
     private void click_gsalles(ActionEvent event) {
     }
 
-    @FXML
-    private void click_geleves(ActionEvent event) {
-    }
 
     @FXML
     private void click_gclasses(ActionEvent event) {
     }
 
-    @FXML
-    private void click_gmatiere(ActionEvent event) {
-    }
-
-    @FXML
-    private void click_gnotes(ActionEvent event) {
-    }
 
     
     
@@ -84,6 +74,8 @@ public class MainwindowController implements Initializable {
     }
     
     
+    
+    
         @FXML
     private void handleNote(ActionEvent event) {
          try {
@@ -99,9 +91,21 @@ public class MainwindowController implements Initializable {
     }
     
 
-    /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////// Si Heni //////////////////////////////////////
     
-    
+     @FXML
+    private void handleCategorybook(ActionEvent event) {
+         try {
+            Parent  conn_page = FXMLLoader.load(getClass().getResource("Categorybook.fxml"));
+            Scene conn_scene = new Scene(conn_page);
+            Stage conn_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            conn_stage.setScene(conn_scene);
+            conn_stage.show();
+             conn_stage.centerOnScreen();
+        } catch (IOException ex) {
+            Logger.getLogger(AdmininterfaceController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     
     ///////////////////////////hbib////////////////////////////////////
@@ -131,6 +135,19 @@ public class MainwindowController implements Initializable {
         }
     }
     /////////////////////////////////////////////////////////////////////////
+
+    @FXML
+    private void handleBook(ActionEvent event) {
+        try {
+            Parent  conn_page = FXMLLoader.load(getClass().getResource("Addbook.fxml"));
+            Scene conn_scene = new Scene(conn_page);
+            Stage conn_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            conn_stage.setScene(conn_scene);
+            conn_stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AdmininterfaceController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     
     
