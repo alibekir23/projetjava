@@ -218,10 +218,7 @@ if (result.get() == ButtonType.OK){
      no.delete(n);
     
 } 
-          
-               
-          
-       
+      
           no.readAll();
         
          } catch (SQLException ex) {

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="584.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetjava.MainwindowController">
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="584.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetjava.MainwindowController">
     <children>
       <ImageView fitHeight="114.0" fitWidth="1201.0" layoutX="-1.0" layoutY="-1.0">
          <image>
@@ -57,9 +57,9 @@
                      </font>
                   </Label>
                </children></Pane>
-            <JFXButton alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="BOTTOM" graphicTextGap="2.0" onAction="#click_geleves" prefHeight="80.0" prefWidth="200.0" styleClass="buttonC" stylesheets="@css/mainwindow.css" text="Students" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <JFXButton alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="BOTTOM" graphicTextGap="2.0" onAction="#handleCategorybook" prefHeight="80.0" prefWidth="200.0" styleClass="buttonC" stylesheets="@css/mainwindow.css" text="Categorybook" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
-                  <Font name="Arial Bold" size="22.0" />
+                  <Font name="Arial Bold" size="16.0" />
                </font>
             </JFXButton>
             <JFXButton alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="BOTTOM" graphicTextGap="5.0" onAction="#click_gclasses" prefHeight="55.0" prefWidth="155.0" ripplerFill="#111111" styleClass="buttonC" stylesheets="@css/mainwindow.css" text="Classes" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
@@ -164,6 +164,11 @@
                <GridPane.margin>
                   <Insets bottom="20.0" left="130.0" />
                </GridPane.margin>
+            </JFXButton>
+            <JFXButton alignment="BOTTOM_RIGHT" onAction="#handleBook" prefHeight="75.0" prefWidth="284.0" text="add book" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
             </JFXButton>
          </children>
       </GridPane>

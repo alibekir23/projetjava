@@ -86,8 +86,7 @@ public class Ajouter_ModuleController implements Initializable {
          boolean c1=true,c2=true;
          
         
-            
-            
+        
             //System.out.println(classe.getSelectionModel().getSelectedItem().toString());
               //  System.out.println(nom_matiere.getText());
                 //    System.out.println(coifficient.getText());
