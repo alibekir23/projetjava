@@ -32,7 +32,7 @@
          <left>
             <VBox prefHeight="477.0" prefWidth="178.0" styleClass="leftbox" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton onAction="#retour" prefHeight="70.0" prefWidth="200.0" text="Home">
+                  <JFXButton fx:id="buttonhome" onAction="#returnhome" prefHeight="70.0" prefWidth="200.0" text="Home">
                      <graphic>
                         <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -41,7 +41,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton onAction="#retour" prefHeight="70.0" prefWidth="212.0" text="Return">
+                  <JFXButton fx:id="buttonreturn" onAction="#retour" prefHeight="70.0" prefWidth="212.0" text="Return">
                      <graphic>
                         <ImageView fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -49,6 +49,11 @@
                            </image>
                         </ImageView>
                      </graphic>
+                  </JFXButton>
+                  <JFXButton onAction="#refresh" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #00C0EF;" text="Refresh">
+                     <VBox.margin>
+                        <Insets left="50.0" />
+                     </VBox.margin>
                   </JFXButton>
                   <Separator layoutX="11.0" layoutY="243.0" prefHeight="11.0" prefWidth="200.0">
                      <VBox.margin>
@@ -91,6 +96,18 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
                      </VBox.margin>
                   </JFXButton>
+                  <JFXButton fx:id="importXLToDB" onAction="#Importexcel" prefHeight="69.0" prefWidth="203.0" style="-fx-background-color: #00C0EF;" text="Excel import" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="59.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images%20heni/excel.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </JFXButton>
                </children>
             </VBox>
          </left>
@@ -105,7 +122,7 @@
                         <Insets left="20.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="64.0" prefWidth="952.0" text="Modules" textFill="WHITE">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="64.0" prefWidth="952.0" text="Category" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>

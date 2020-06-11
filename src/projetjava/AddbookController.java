@@ -76,6 +76,10 @@ public class AddbookController implements Initializable {
     private JFXButton chooser;
     @FXML
     private ImageView Imagebook;
+    @FXML
+    private JFXButton buttonhome;
+    @FXML
+    private JFXButton buttonreturn;
     
     /**
      * Initializes the controller class.
@@ -173,6 +177,32 @@ public class AddbookController implements Initializable {
             Imagebook.setImage(I);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AddbookController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void returnhome(ActionEvent event) {
+        try {
+            Parent  conn_page = FXMLLoader.load(getClass().getResource("mainwindow.fxml"));
+            Scene conn_scene = new Scene(conn_page);
+            Stage conn_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            conn_stage.setScene(conn_scene);
+            conn_stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AdmininterfaceController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void returninterfacebook(ActionEvent event) {
+        try {
+            Parent  conn_page = FXMLLoader.load(getClass().getResource("Book.fxml"));
+            Scene conn_scene = new Scene(conn_page);
+            Stage conn_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            conn_stage.setScene(conn_scene);
+            conn_stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AdmininterfaceController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

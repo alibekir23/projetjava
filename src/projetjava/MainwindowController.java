@@ -139,7 +139,7 @@ public class MainwindowController implements Initializable {
     @FXML
     private void handleBook(ActionEvent event) {
         try {
-            Parent  conn_page = FXMLLoader.load(getClass().getResource("Addbook.fxml"));
+            Parent  conn_page = FXMLLoader.load(getClass().getResource("Book.fxml"));
             Scene conn_scene = new Scene(conn_page);
             Stage conn_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             conn_stage.setScene(conn_scene);

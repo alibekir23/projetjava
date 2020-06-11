@@ -27,7 +27,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <JFXButton buttonType="RAISED" layoutX="228.0" layoutY="360.0" onAction="#Cancel" prefHeight="46.0" prefWidth="145.0" style="-fx-background-color: red;" text="Cancel" textFill="WHITE">
+      <JFXButton fx:id="buttoncancel" buttonType="RAISED" layoutX="228.0" layoutY="360.0" onAction="#Cancel" prefHeight="46.0" prefWidth="145.0" style="-fx-background-color: red;" text="Cancel" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>

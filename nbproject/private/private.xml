@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/wamp64/www/projetjava/src/projetjava/BookController.java</file>
-            <file>file:/D:/wamp64/www/projetjava/src/entities/book.java</file>
-            <file>file:/D:/wamp64/www/projetjava/src/services/ServiceMatiere.java</file>
-            <file>file:/D:/wamp64/www/projetjava/src/services/ServiceBook.java</file>
-            <file>file:/D:/wamp64/www/projetjava/src/projetjava/NoteController.java</file>
+            <file>file:/D:/wamp64/www/projetjava/src/projetjava/CategorybookController.java</file>
+            <file>file:/D:/wamp64/www/projetjava/src/projetjava/AddCategorybookController.java</file>
+            <file>file:/D:/wamp64/www/projetjava/src/utils/ConnexionBD.java</file>
+            <file>file:/D:/wamp64/www/projetjava/src/projetjava/DetailsbookController.java</file>
+            <file>file:/D:/wamp64/www/projetjava/src/services/ServiceCategorybook.java</file>
         </group>
     </open-files>
 </project-private>

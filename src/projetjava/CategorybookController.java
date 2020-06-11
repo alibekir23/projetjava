@@ -5,10 +5,13 @@
  */
 package projetjava;
 
+import com.jfoenix.controls.JFXButton;
 import entities.categorybook;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -35,6 +38,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import services.ServiceCategorybook;
+import utils.ConnexionBD;
 
 /**
  * FXML Controller class
@@ -53,6 +57,12 @@ public class CategorybookController implements Initializable {
     @FXML
     private TableColumn<categorybook,String> name_category;
 ObservableList<categorybook> data=FXCollections.observableArrayList();
+    @FXML
+    private JFXButton buttonhome;
+    @FXML
+    private JFXButton buttonreturn;
+    @FXML
+    private JFXButton importXLToDB;
  public TableColumn<?, ?> getId_category() {
         return id_category;
     }
@@ -146,6 +156,15 @@ try {
    }
     @FXML
     private void retour(ActionEvent event) {
+        try {
+            Parent  conn_page = FXMLLoader.load(getClass().getResource("mainwindow.fxml"));
+            Scene conn_scene = new Scene(conn_page);
+            Stage conn_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            conn_stage.setScene(conn_scene);
+            conn_stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AdmininterfaceController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
@@ -219,6 +238,44 @@ if (result.get() == ButtonType.OK){
         }
    }
     }
+
+    @FXML
+    private void returnhome(ActionEvent event) {
+         try {
+            Parent  conn_page = FXMLLoader.load(getClass().getResource("mainwindow.fxml"));
+            Scene conn_scene = new Scene(conn_page);
+            Stage conn_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            conn_stage.setScene(conn_scene);
+            conn_stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AdmininterfaceController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    
+    @FXML
+    private void Importexcel(ActionEvent event) {
+   
+   
+
+    
+        
+        
+        }
+
+    @FXML
+    private void refresh(ActionEvent event) {
+         try {
+            Parent  conn_page = FXMLLoader.load(getClass().getResource("Categorybook.fxml"));
+            Scene conn_scene = new Scene(conn_page);
+            Stage conn_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            conn_stage.setScene(conn_scene);
+            conn_stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AdmininterfaceController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
 
    
     

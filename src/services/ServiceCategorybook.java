@@ -6,6 +6,10 @@
 package services;
 
 import entities.categorybook;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,6 +21,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.geometry.Pos;
 import javafx.util.Duration;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.controlsfx.control.Notifications;
 import utils.ConnexionBD;
 
@@ -48,7 +55,6 @@ public class ServiceCategorybook {
       try{
         ste = con.createStatement();
                 String requeteInsert = "INSERT INTO `java`.`categorybook` (`id_category`,`name_category`) VALUES ('" + t.getId_category() + "', '" + t.getName_category()+ "');";
-
         ste.executeUpdate(requeteInsert);
          SQLWarning w = ste.getWarnings();
         System.out.println("ok");
@@ -77,7 +83,54 @@ public class ServiceCategorybook {
         }     
         
     }
-    
+     /*public void importtoexcel(categorybook  t) {
+        
+      try{
+          
+          try{
+              String requeteInsert = "INSERT INTO `java`.`categorybook` (`id_category`,`name_category`) VALUES (?,?)";
+                            ste = con.prepareStatement(requeteInsert);
+
+              
+              FileInputStream fileIn;
+              fileIn = new FileInputStream(new File("category.xlsx"));
+                XSSFWorkbook wb = new XSSFWorkbook(fileIn);
+              XSSFSheet sheet = wb.getSheetAt(0);
+              Row row;
+              for(int i=1; i<=sheet.getLastRowNum();i++){
+                  row = sheet.getRow(i);
+                  ste.s
+                  ste.
+                  ste.setString(2, row.getCell(1).getStringCellValue());
+              }
+              
+          } catch (FileNotFoundException ex) {
+              Logger.getLogger(ServiceCategorybook.class.getName()).log(Level.SEVERE, null, ex);
+          } catch (SQLException ex) {
+              Logger.getLogger(ServiceCategorybook.class.getName()).log(Level.SEVERE, null, ex);
+          } catch (IOException ex) {
+              Logger.getLogger(ServiceCategorybook.class.getName()).log(Level.SEVERE, null, ex);
+          }
+          
+          
+          
+          SQLWarning w = ste.getWarnings();
+          System.out.println("ok");
+          
+          if (w == null) {
+              System.out.println ("\n *** SQL Warning ***\n");
+              Notifications notificationBuilder = Notifications.create().title("Success !").text("Category added").graphic(null).darkStyle().position(Pos.TOP_CENTER).hideAfter(Duration.seconds(5));
+              notificationBuilder.showConfirm();
+              
+          }
+          
+      } catch (SQLException ex) {
+              Logger.getLogger(ServiceCategorybook.class.getName()).log(Level.SEVERE, null, ex);
+          }
+           
+         
+    }
+*/
     public void delete(categorybook t)  {
     
             String sql = "DELETE FROM `java`.`categorybook` where (id_category ="+t.getId_category()+");";

@@ -37,6 +37,8 @@ public class AddCategorybookController implements Initializable {
      */
      @FXML
     private JFXTextField namecategory;
+    @FXML
+    private JFXButton buttoncancel;
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {

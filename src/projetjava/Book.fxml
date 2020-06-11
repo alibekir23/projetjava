@@ -3,9 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -32,7 +30,7 @@
          <left>
             <VBox prefHeight="477.0" prefWidth="178.0" styleClass="leftbox" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton onAction="#retour" prefHeight="70.0" prefWidth="200.0" text="Home">
+                  <JFXButton fx:id="buttonhome" onAction="#returnhome" prefHeight="70.0" prefWidth="200.0" text="Home">
                      <graphic>
                         <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -41,7 +39,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton onAction="#retour" prefHeight="70.0" prefWidth="212.0" text="Return">
+                  <JFXButton fx:id="buttonreturn" onAction="#retour" prefHeight="70.0" prefWidth="212.0" text="Return">
                      <graphic>
                         <ImageView fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -55,6 +53,24 @@
                         <Insets left="5.0" />
                      </VBox.margin>
                   </Separator>
+                  <JFXButton onAction="#exportopdf" prefHeight="69.0" prefWidth="173.0" style="-fx-background-color: #00C0EF;" text="PDF" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/1200px-PDF_file_icon.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton onAction="#details" prefHeight="69.0" prefWidth="173.0" style="-fx-background-color: #00C0EF;" text="Details" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <Separator prefHeight="11.0" prefWidth="149.0" />
                   <JFXButton onAction="#Ajoutbook" prefHeight="69.0" prefWidth="173.0" style="-fx-background-color: #00C0EF;" text="New Book" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="29.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
@@ -157,13 +173,6 @@
                      <GridPane.margin>
                         <Insets left="10.0" />
                      </GridPane.margin>
-                     <contextMenu>
-                        <ContextMenu>
-                           <items>
-                              <MenuItem mnemonicParsing="false" onAction="#delete" text="Delete" />
-                           </items>
-                        </ContextMenu>
-                     </contextMenu>
                   </TableView>
                </children>
             </GridPane>
